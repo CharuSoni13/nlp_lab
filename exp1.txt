@@ -66,28 +66,6 @@ NLP experiments
 
 
 
-Features of NLTK
-
-
-Text Tokenization
-
-
-Stopword Removal
-
-
-Stemming and Lemmatization
-
-
-Part-of-Speech Tagging
-
-
-Named Entity Recognition
-
-
-Text Classification
-
-
-Sentiment Analysis
 
 
 
