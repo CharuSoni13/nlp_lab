@@ -1,0 +1,208 @@
+Experiment 1: Installation and Set-up of Natural Language Tool Kit (NLTK)
+Aim
+To install and set up the Natural Language Toolkit (NLTK) library in Python for performing Natural Language Processing (NLP) tasks.
+
+Theory
+Introduction to NLP
+Natural Language Processing (NLP) is a branch of Artificial Intelligence that enables computers to understand, interpret, and process human language such as English, Hindi, etc.
+Applications of NLP include:
+
+
+Chatbots
+
+
+Language translation
+
+
+Sentiment analysis
+
+
+Speech recognition
+
+
+Text summarization
+
+
+Spam detection
+
+
+
+Introduction to NLTK
+Natural Language Toolkit (NLTK) is one of the most popular Python libraries used for NLP tasks.
+It provides:
+
+
+Easy-to-use interfaces
+
+
+Text processing libraries
+
+
+Tokenization tools
+
+
+Stemming and lemmatization
+
+
+POS tagging
+
+
+Parsing
+
+
+Machine learning support
+
+
+NLTK is mainly used for:
+
+
+Educational purposes
+
+
+Research work
+
+
+NLP experiments
+
+
+
+Features of NLTK
+
+
+Text Tokenization
+
+
+Stopword Removal
+
+
+Stemming and Lemmatization
+
+
+Part-of-Speech Tagging
+
+
+Named Entity Recognition
+
+
+Text Classification
+
+
+Sentiment Analysis
+
+
+
+System Requirements
+
+
+Python installed in the system
+
+
+Internet connection for downloading NLTK datasets
+
+
+Jupyter Notebook / VS Code / PyCharm
+
+
+
+Installation Steps
+Step 1: Install Python
+Download and install Python from:
+Python Official Website
+Verify installation:
+python --version
+
+Step 2: Install NLTK
+Open terminal or command prompt and run:
+pip install nltk
+
+Step 3: Download NLTK Resources
+Run Python shell or Jupyter Notebook:
+import nltknltk.download()
+A downloader window will appear.
+Select packages such as:
+
+
+punkt
+
+
+stopwords
+
+
+wordnet
+
+
+averaged_perceptron_tagger
+
+
+
+Program Code
+# Importing NLTK libraryimport nltk# Downloading necessary packagesnltk.download('punkt')# Sample texttext = "Natural Language Processing is interesting."# Tokenizationtokens = nltk.word_tokenize(text)# Display outputprint("Tokens:", tokens)
+
+Output
+[nltk_data] Downloading package punkt to ...[nltk_data] Package punkt is already up-to-date!Tokens: ['Natural', 'Language', 'Processing', 'is', 'interesting', '.']
+
+Explanation of the Code
+StatementDescriptionimport nltkImports NLTK librarynltk.download('punkt')Downloads tokenizer packageword_tokenize()Splits sentence into wordsprint()Displays tokenized output
+
+Advantages of NLTK
+
+
+Easy to learn and use
+
+
+Large collection of NLP tools
+
+
+Open-source library
+
+
+Supports research and education
+
+
+Works well with Python
+
+
+
+Applications of NLTK
+
+
+Chatbots
+
+
+Text analytics
+
+
+Email filtering
+
+
+Language translation
+
+
+Sentiment analysis
+
+
+Information retrieval systems
+
+
+
+Conclusion
+NLTK is a powerful Python library for Natural Language Processing. In this experiment, NLTK was successfully installed and configured, and basic text tokenization was performed.
+
+Learning Outcome
+After performing this experiment, students will be able to:
+
+
+Understand the basics of Natural Language Processing.
+
+
+Install and configure the NLTK library in Python.
+
+
+Download and manage NLTK datasets and resources.
+
+
+Execute basic NLP operations such as tokenization.
+
+
+Develop a foundation for advanced NLP experiments.
+

@@ -1,0 +1,109 @@
+EXPERIMENT 5: Analyzing Unstructured Data using Natural Language Tool Kit (NLTK)
+
+Aim:
+To analyze unstructured textual data using the NLTK library in Python.
+
+-------------------------------------------------------------------
+
+Theory:
+
+Unstructured data refers to data that does not follow a predefined format or organized structure. Examples of unstructured data include emails, social media posts, customer reviews, articles, and chat messages.
+
+Natural Language Processing (NLP) techniques are used to process and analyze unstructured text data. NLTK provides various tools for text preprocessing and analysis.
+
+The analysis of unstructured data generally includes:
+- Tokenization
+- Stopword Removal
+- Frequency Analysis
+- Stemming
+- Lemmatization
+
+Tokenization divides text into smaller units called tokens.
+Stopword removal eliminates common words such as "is", "the", and "are" that do not add important meaning.
+Frequency analysis helps identify the most commonly occurring words in the text.
+
+Applications of unstructured data analysis:
+- Sentiment Analysis
+- Social Media Analysis
+- Spam Detection
+- Chatbots
+- Search Engines
+- Recommendation Systems
+
+NLTK provides modules such as:
+- word_tokenize()
+- stopwords
+- FreqDist()
+
+These tools help in preprocessing and analyzing textual data efficiently.
+
+-------------------------------------------------------------------
+
+Code:
+
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.probability import FreqDist
+
+# Download required resources
+nltk.download('punkt')
+nltk.download('stopwords')
+
+# Sample text
+text = """
+Natural Language Processing is widely used in chatbots,
+search engines, recommendation systems, and sentiment analysis.
+"""
+
+# Tokenization
+tokens = word_tokenize(text)
+
+# Remove stopwords
+stop_words = set(stopwords.words('english'))
+
+filtered_words = []
+
+for word in tokens:
+    if word.lower() not in stop_words:
+        filtered_words.append(word)
+
+# Frequency distribution
+freq = FreqDist(filtered_words)
+
+# Display outputs
+print("Tokens:")
+print(tokens)
+
+print("\nFiltered Words:")
+print(filtered_words)
+
+print("\nWord Frequency:")
+print(freq.most_common())
+
+-------------------------------------------------------------------
+
+Output:
+
+Tokens:
+['Natural', 'Language', 'Processing', 'is', 'widely', 'used',
+ 'in', 'chatbots', ',', 'search', 'engines', ',',
+ 'recommendation', 'systems', ',', 'and', 'sentiment',
+ 'analysis', '.']
+
+Filtered Words:
+['Natural', 'Language', 'Processing', 'widely', 'used',
+ 'chatbots', ',', 'search', 'engines', ',',
+ 'recommendation', 'systems', ',', 'sentiment',
+ 'analysis', '.']
+
+Word Frequency:
+[(',', 3), ('Natural', 1), ('Language', 1),
+ ('Processing', 1), ('widely', 1)]
+
+-------------------------------------------------------------------
+
+Learning Outcome:
+
+Students learned how to preprocess and analyze unstructured text data using NLTK.
+They also learned tokenization, stopword removal, and frequency analysis techniques.

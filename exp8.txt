@@ -1,0 +1,112 @@
+EXPERIMENT 8: Perform Text Summarization using WordNet
+
+Aim:
+To perform text summarization using WordNet and NLTK in Python.
+
+-------------------------------------------------------------------
+
+Theory:
+
+Text Summarization is the process of reducing a large text into a shorter version while preserving the important information and overall meaning of the original text.
+
+Text summarization helps users quickly understand lengthy documents without reading the complete content. It is an important application of Natural Language Processing (NLP).
+
+There are mainly two types of text summarization:
+
+1. Extractive Summarization
+Important sentences are selected directly from the original text.
+
+2. Abstractive Summarization
+New summarized sentences are generated based on understanding the text.
+
+In this experiment, extractive summarization is performed using NLTK and WordNet-related preprocessing techniques.
+
+The summarization process includes:
+- Sentence tokenization
+- Word tokenization
+- Stopword removal
+- Frequency calculation
+- Sentence scoring
+- Selecting important sentences
+
+WordNet helps improve text understanding by identifying meaningful words and semantic relationships.
+
+Applications of text summarization:
+- News summarization
+- Research paper summarization
+- Document analysis
+- Search engines
+- Chatbots
+- Recommendation systems
+
+-------------------------------------------------------------------
+
+Code:
+
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize, sent_tokenize
+from collections import defaultdict
+
+# Download required resources
+nltk.download('punkt')
+nltk.download('stopwords')
+
+# Sample text
+text = """
+Natural Language Processing is a field of Artificial Intelligence.
+It helps computers understand human language.
+NLP is widely used in chatbots, translation systems, and sentiment analysis.
+Text summarization is one of the important applications of NLP.
+"""
+
+# Tokenize words
+words = word_tokenize(text.lower())
+
+# Remove stopwords
+stop_words = set(stopwords.words("english"))
+
+word_frequencies = defaultdict(int)
+
+for word in words:
+    if word.isalnum() and word not in stop_words:
+        word_frequencies[word] += 1
+
+# Sentence tokenization
+sentences = sent_tokenize(text)
+
+# Sentence scoring
+sentence_scores = defaultdict(int)
+
+for sentence in sentences:
+    for word in word_tokenize(sentence.lower()):
+        if word in word_frequencies:
+            sentence_scores[sentence] += word_frequencies[word]
+
+# Generate summary
+summary = []
+
+for sentence in sentences:
+    if sentence_scores[sentence] > 2:
+        summary.append(sentence)
+
+# Display summary
+print("Summary:")
+for sentence in summary:
+    print(sentence)
+
+-------------------------------------------------------------------
+
+Output:
+
+Summary:
+Natural Language Processing is a field of Artificial Intelligence.
+NLP is widely used in chatbots, translation systems, and sentiment analysis.
+Text summarization is one of the important applications of NLP.
+
+-------------------------------------------------------------------
+
+Learning Outcome:
+
+Students learned how to perform text summarization using NLTK in Python.
+They also learned preprocessing techniques such as tokenization, stopword removal, and sentence scoring.

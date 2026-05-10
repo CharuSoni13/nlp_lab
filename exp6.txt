@@ -1,0 +1,88 @@
+EXPERIMENT 6: Perform Sentiment Analysis on Real-Life Data
+
+Aim:
+To perform sentiment analysis on real-life textual data using the NLTK library in Python.
+
+-------------------------------------------------------------------
+
+Theory:
+
+Sentiment Analysis is a Natural Language Processing (NLP) technique used to identify the emotional tone or opinion expressed in a piece of text. It helps determine whether the sentiment of the text is positive, negative, or neutral.
+
+Sentiment analysis is widely used in:
+- Customer review analysis
+- Social media monitoring
+- Product feedback analysis
+- Survey analysis
+- Brand reputation management
+
+NLTK provides a sentiment analysis tool called VADER (Valence Aware Dictionary and sEntiment Reasoner). VADER is specially designed for analyzing sentiments in short texts such as reviews and social media posts.
+
+VADER calculates:
+- Positive score
+- Negative score
+- Neutral score
+- Compound score
+
+The compound score ranges from:
+- +1 -> Most Positive
+- -1 -> Most Negative
+
+Sentiment classification:
+- Positive Sentiment -> compound >= 0.05
+- Negative Sentiment -> compound <= -0.05
+- Neutral Sentiment -> between -0.05 and 0.05
+
+Applications of Sentiment Analysis:
+- Opinion Mining
+- Product Recommendation
+- Market Research
+- Customer Feedback Analysis
+- Social Media Analytics
+
+-------------------------------------------------------------------
+
+Code:
+
+from nltk.sentiment import SentimentIntensityAnalyzer
+import nltk
+
+# Download VADER lexicon
+nltk.download('vader_lexicon')
+
+# Initialize analyzer
+sia = SentimentIntensityAnalyzer()
+
+# Sample text
+text = "The movie was amazing and the acting was excellent."
+
+# Perform sentiment analysis
+score = sia.polarity_scores(text)
+
+# Display scores
+print("Sentiment Score:")
+print(score)
+
+# Determine sentiment
+if score['compound'] >= 0.05:
+    print("Positive Sentiment")
+elif score['compound'] <= -0.05:
+    print("Negative Sentiment")
+else:
+    print("Neutral Sentiment")
+
+-------------------------------------------------------------------
+
+Output:
+
+Sentiment Score:
+{'neg': 0.0, 'neu': 0.392, 'pos': 0.608, 'compound': 0.8316}
+
+Positive Sentiment
+
+-------------------------------------------------------------------
+
+Learning Outcome:
+
+Students learned how to perform sentiment analysis using NLTK and VADER.
+They also learned how to classify text into positive, negative, and neutral sentiments.

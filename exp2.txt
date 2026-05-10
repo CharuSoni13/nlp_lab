@@ -1,0 +1,173 @@
+Experiment 2: Installation and Set-up of WordNet Libraries
+Aim
+To install and set up the WordNet libraries using NLTK in Python for performing lexical and semantic analysis in Natural Language Processing (NLP).
+
+Theory
+Introduction to WordNet
+WordNet is a large lexical database of the English language. It groups English words into sets of synonyms called synsets.
+WordNet helps computers understand:
+
+
+Meaning of words
+
+
+Relationships between words
+
+
+Synonyms and antonyms
+
+
+Semantic similarity
+
+
+It is widely used in:
+
+
+NLP applications
+
+
+Search engines
+
+
+Chatbots
+
+
+Machine translation
+
+
+Text mining
+
+
+
+WordNet in NLTK
+Natural Language Toolkit provides access to WordNet through its corpus module.
+Using WordNet, we can:
+
+
+Find synonyms
+
+
+Find antonyms
+
+
+Identify word meanings
+
+
+Perform word sense disambiguation
+
+
+Analyze semantic relationships
+
+
+
+Important Terminologies
+TermMeaningSynsetGroup of synonymous wordsSynonymWords with similar meaningAntonymWords with opposite meaningHypernymGeneralized word/categoryHyponymSpecific word/category
+Example:
+
+
+Car → Vehicle (Hypernym)
+
+
+Vehicle → Car (Hyponym)
+
+
+
+Installation Steps
+Step 1: Install NLTK
+Open terminal or command prompt and run:
+pip install nltk
+
+Step 2: Download WordNet Corpus
+Run Python shell or Jupyter Notebook:
+import nltknltk.download('wordnet')nltk.download('omw-1.4')
+Explanation
+
+
+wordnet → Main WordNet database
+
+
+omw-1.4 → Open Multilingual WordNet support
+
+
+
+Program Code
+# Import WordNetfrom nltk.corpus import wordnet# Finding synsets of the word 'computer'synsets = wordnet.synsets("computer")# Display synsetsprint("Synsets:", synsets)# Display meaning of first synsetprint("\nDefinition:")print(synsets[0].definition())# Display examplesprint("\nExample:")print(synsets[0].examples())
+
+Output
+Synsets: [Synset('computer.n.01')]Definition:A machine for performing calculations automatically.Example:['the computer executed the program']
+
+Explanation of the Code
+StatementDescriptionfrom nltk.corpus import wordnetImports WordNet corpuswordnet.synsets()Retrieves synsets of a word.definition()Displays meaning of the word.examples()Shows example sentence
+
+Additional Example: Synonyms and Antonyms
+Program
+from nltk.corpus import wordnetsynonyms = []antonyms = []for syn in wordnet.synsets("good"):    for lemma in syn.lemmas():        synonyms.append(lemma.name())        if lemma.antonyms():            antonyms.append(lemma.antonyms()[0].name())print("Synonyms:", set(synonyms))print("Antonyms:", set(antonyms))
+
+Output
+Synonyms: {'good', 'expert', 'upright', 'beneficial', ...}Antonyms: {'bad', 'evil'}
+
+Applications of WordNet
+
+
+Sentiment Analysis
+
+
+Search Engines
+
+
+Chatbots
+
+
+Machine Translation
+
+
+Information Retrieval
+
+
+Text Summarization
+
+
+Semantic Analysis
+
+
+
+Advantages of WordNet
+
+
+Rich lexical database
+
+
+Improves semantic understanding
+
+
+Supports NLP research
+
+
+Easy integration with Python
+
+
+Helps in understanding word relationships
+
+
+
+Conclusion
+In this experiment, WordNet libraries were successfully installed and configured using NLTK. Basic operations such as retrieving synsets, definitions, synonyms, and antonyms were performed successfully.
+
+Learning Outcome
+After performing this experiment, students will be able to:
+
+
+Understand the concept of WordNet and lexical databases.
+
+
+Install and configure WordNet libraries using NLTK.
+
+
+Retrieve meanings and examples of words.
+
+
+Find synonyms and antonyms programmatically.
+
+
+Apply WordNet in semantic analysis and NLP applications.
+

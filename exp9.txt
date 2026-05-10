@@ -1,0 +1,95 @@
+EXPERIMENT 9: Write a Python Program to Perform Lemmatization using NLTK
+
+Aim:
+To perform lemmatization using the NLTK library in Python.
+
+-------------------------------------------------------------------
+
+Theory:
+
+Lemmatization is the process of reducing a word to its base or dictionary form called a lemma. It is an important preprocessing technique in Natural Language Processing (NLP).
+
+Unlike stemming, lemmatization returns meaningful root words by considering the grammatical meaning and context of the word.
+
+Examples:
+running -> run
+studies -> study
+better -> good
+
+Lemmatization helps improve text analysis by converting different forms of a word into a common base form.
+
+Applications of lemmatization:
+- Search Engines
+- Chatbots
+- Sentiment Analysis
+- Text Summarization
+- Information Retrieval
+
+NLTK provides the WordNetLemmatizer class for performing lemmatization using the WordNet lexical database.
+
+Difference between Stemming and Lemmatization:
+
+Stemming:
+- Removes suffixes directly
+- May produce invalid words
+- Faster process
+
+Lemmatization:
+- Uses vocabulary and meaning
+- Produces meaningful words
+- More accurate
+
+Example:
+studies -> studi (stemming)
+studies -> study (lemmatization)
+
+-------------------------------------------------------------------
+
+Code:
+
+from nltk.stem import WordNetLemmatizer
+import nltk
+
+# Download WordNet resources
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
+# Initialize lemmatizer
+lemmatizer = WordNetLemmatizer()
+
+# Sample words
+words = ["running", "studies", "playing", "better"]
+
+# Perform lemmatization
+print("Lemmatized Words:")
+
+for word in words:
+    print(word, "->", lemmatizer.lemmatize(word))
+
+# Better lemmatization using POS
+print("\nUsing POS Tags:")
+print(lemmatizer.lemmatize("running", pos='v'))
+print(lemmatizer.lemmatize("playing", pos='v'))
+print(lemmatizer.lemmatize("better", pos='a'))
+
+-------------------------------------------------------------------
+
+Output:
+
+Lemmatized Words:
+running -> running
+studies -> study
+playing -> playing
+better -> better
+
+Using POS Tags:
+run
+play
+good
+
+-------------------------------------------------------------------
+
+Learning Outcome:
+
+Students learned how to perform lemmatization using NLTK in Python.
+They also understood the difference between stemming and lemmatization.

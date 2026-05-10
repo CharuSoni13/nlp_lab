@@ -1,0 +1,102 @@
+EXPERIMENT 10: Write a Python Program to Perform Named Entity Recognition using NLTK
+
+Aim:
+To perform Named Entity Recognition (NER) using the NLTK library in Python.
+
+-------------------------------------------------------------------
+
+Theory:
+
+Named Entity Recognition (NER) is a Natural Language Processing (NLP) technique used to identify and classify important entities present in text into predefined categories.
+
+NER helps detect entities such as:
+- Person names
+- Organization names
+- Locations
+- Dates
+- Time
+- Monetary values
+
+Example:
+
+Sentence:
+Virat Kohli works at Google in India.
+
+NER Output:
+Virat Kohli -> PERSON
+Google -> ORGANIZATION
+India -> GPE (Location)
+
+NER is useful for extracting meaningful information from unstructured text data.
+
+NLTK performs Named Entity Recognition using:
+1. Tokenization
+2. Part-of-Speech Tagging
+3. Chunking
+
+The ne_chunk() function in NLTK is used to identify named entities from tagged text.
+
+Applications of Named Entity Recognition:
+- Search Engines
+- Chatbots
+- Information Extraction
+- Question Answering Systems
+- News Analysis
+- Recommendation Systems
+
+Types of Named Entities:
+
+PERSON -> Rahul, Virat Kohli
+ORGANIZATION -> Google, Microsoft
+GPE -> India, Delhi
+DATE -> 10 May 2026
+TIME -> 10:30 AM
+
+-------------------------------------------------------------------
+
+Code:
+
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk import pos_tag, ne_chunk
+
+# Download required datasets
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+
+# Sample text
+text = "Virat Kohli works at Google in India."
+
+# Tokenization
+tokens = word_tokenize(text)
+
+# POS Tagging
+pos_tags = pos_tag(tokens)
+
+# Named Entity Recognition
+named_entities = ne_chunk(pos_tags)
+
+# Display output
+print(named_entities)
+
+-------------------------------------------------------------------
+
+Output:
+
+(S
+  (PERSON Virat/NNP Kohli/NNP)
+  works/VBZ
+  at/IN
+  (ORGANIZATION Google/NNP)
+  in/IN
+  (GPE India/NNP)
+  ./.)
+
+-------------------------------------------------------------------
+
+Learning Outcome:
+
+Students learned how to perform Named Entity Recognition using NLTK in Python.
+They also understood how NLP systems identify and classify important entities from text data.

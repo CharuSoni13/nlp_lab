@@ -1,0 +1,82 @@
+EXPERIMENT 4: Perform Part of Speech Tagging using NLTK
+
+Aim:
+To perform Part of Speech (POS) Tagging using the NLTK library in Python.
+
+-------------------------------------------------------------------
+
+Theory:
+
+Part of Speech (POS) Tagging is the process of identifying and assigning grammatical categories to words in a sentence. Each word is labeled according to its role such as noun, verb, adjective, adverb, pronoun, etc.
+
+POS tagging helps computers understand sentence structure and meaning. It is an important preprocessing step in Natural Language Processing (NLP).
+
+Examples of POS tags:
+- NN  -> Noun
+- NNP -> Proper Noun
+- VB  -> Verb
+- JJ  -> Adjective
+- RB  -> Adverb
+
+Example Sentence:
+Rahul is playing cricket.
+
+POS Tagged Output:
+Rahul -> Proper Noun
+is -> Verb
+playing -> Verb
+cricket -> Noun
+
+Applications of POS Tagging:
+- Chatbots
+- Machine Translation
+- Information Extraction
+- Text-to-Speech Systems
+- Sentiment Analysis
+
+NLTK provides the function nltk.pos_tag() to perform POS tagging on tokenized text.
+
+-------------------------------------------------------------------
+
+Code:
+
+import nltk
+from nltk.tokenize import word_tokenize
+
+# Download required resources
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+
+# Sample sentence
+text = "Rahul is playing cricket in the ground."
+
+# Tokenization
+tokens = word_tokenize(text)
+
+# POS Tagging
+pos_tags = nltk.pos_tag(tokens)
+
+# Display output
+print("POS Tags:")
+print(pos_tags)
+
+-------------------------------------------------------------------
+
+Output:
+
+POS Tags:
+[('Rahul', 'NNP'),
+ ('is', 'VBZ'),
+ ('playing', 'VBG'),
+ ('cricket', 'NN'),
+ ('in', 'IN'),
+ ('the', 'DT'),
+ ('ground', 'NN'),
+ ('.', '.')]
+
+-------------------------------------------------------------------
+
+Learning Outcome:
+
+Students learned how to perform Part of Speech Tagging using NLTK in Python.
+They also understood how grammatical categories help in Natural Language Processing tasks.

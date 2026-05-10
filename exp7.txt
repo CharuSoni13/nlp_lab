@@ -1,0 +1,82 @@
+EXPERIMENT 7: Perform Word Sense Disambiguation using WordNet
+
+Aim:
+To perform Word Sense Disambiguation (WSD) using WordNet in NLTK.
+
+-------------------------------------------------------------------
+
+Theory:
+
+Word Sense Disambiguation (WSD) is the process of identifying the correct meaning of a word based on its context in a sentence. Many English words have multiple meanings, and WSD helps determine the intended meaning.
+
+Example:
+Word: bank
+
+Possible meanings:
+1. Financial institution
+2. Side of a river
+
+Sentence:
+"He deposited money in the bank."
+
+Correct meaning:
+Financial institution
+
+Word Sense Disambiguation is an important task in Natural Language Processing because the same word can have different meanings in different contexts.
+
+NLTK uses WordNet and the Lesk Algorithm for performing WSD.
+
+The Lesk Algorithm works by:
+- Finding all possible meanings (synsets) of a word
+- Comparing dictionary definitions with context words
+- Selecting the meaning with maximum overlap
+
+WordNet provides:
+- Synsets
+- Definitions
+- Examples
+- Semantic relationships
+
+Applications of WSD:
+- Machine Translation
+- Chatbots
+- Search Engines
+- Question Answering Systems
+- Information Retrieval
+
+-------------------------------------------------------------------
+
+Code:
+
+from nltk.wsd import lesk
+from nltk.tokenize import word_tokenize
+
+# Sample sentence
+sentence = "He deposited money in the bank."
+
+# Perform WSD
+sense = lesk(word_tokenize(sentence), 'bank')
+
+# Display output
+print("Word Sense:")
+print(sense)
+
+print("\nDefinition:")
+print(sense.definition())
+
+-------------------------------------------------------------------
+
+Output:
+
+Word Sense:
+Synset('depository_financial_institution.n.01')
+
+Definition:
+A financial institution that accepts deposits and channels the money into lending activities.
+
+-------------------------------------------------------------------
+
+Learning Outcome:
+
+Students learned how to perform Word Sense Disambiguation using WordNet in NLTK.
+They also understood how context helps identify the correct meaning of ambiguous words.

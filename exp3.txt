@@ -1,0 +1,148 @@
+Experiment 3: Perform Text Tokenization using NLTK
+Aim
+To perform text tokenization using the NLTK library in Python.
+
+Theory
+Introduction to Tokenization
+Tokenization is the process of breaking a large text into smaller units called tokens. Tokens can be:
+
+
+Words
+
+
+Sentences
+
+
+Characters
+
+
+Tokenization is the first step in most Natural Language Processing (NLP) tasks.
+Example:
+Sentence:
+Natural Language Processing is amazing.
+Word Tokens:
+['Natural', 'Language', 'Processing', 'is', 'amazing', '.']
+
+Types of Tokenization
+1. Word Tokenization
+Splits text into individual words.
+Example:
+I love NLP.
+Output:
+['I', 'love', 'NLP', '.']
+
+2. Sentence Tokenization
+Splits paragraph into individual sentences.
+Example:
+Hello world. Welcome to NLP.
+Output:
+['Hello world.', 'Welcome to NLP.']
+
+NLTK for Tokenization
+Natural Language Toolkit provides built-in tokenizers for:
+
+
+Word tokenization
+
+
+Sentence tokenization
+
+
+Regular expression tokenization
+
+
+NLTK uses the Punkt Tokenizer Model for sentence splitting.
+
+Requirements
+
+
+Python installed
+
+
+NLTK library installed
+
+
+Install NLTK using:
+pip install nltk
+Download tokenizer package:
+import nltknltk.download('punkt')
+
+Program 1: Word Tokenization
+Code
+# Import libraryimport nltkfrom nltk.tokenize import word_tokenize# Sample texttext = "Natural Language Processing is very interesting."# Perform word tokenizationtokens = word_tokenize(text)# Display outputprint("Word Tokens:")print(tokens)
+
+Output
+Word Tokens:['Natural', 'Language', 'Processing', 'is', 'very', 'interesting', '.']
+
+Explanation
+StatementDescriptionword_tokenize()Splits text into wordstokensStores tokenized wordsprint()Displays output
+
+Program 2: Sentence Tokenization
+Code
+# Import libraryfrom nltk.tokenize import sent_tokenize# Paragraphtext = "NLP is an important field. It is used in chatbots. It helps computers understand language."# Perform sentence tokenizationsentences = sent_tokenize(text)# Display outputprint("Sentence Tokens:")print(sentences)
+
+Output
+Sentence Tokens:['NLP is an important field.', 'It is used in chatbots.', 'It helps computers understand language.']
+
+Difference Between Word and Sentence Tokenization
+Word TokenizationSentence TokenizationSplits text into wordsSplits text into sentencesSmaller unitsLarger unitsUsed in text analysisUsed in paragraph analysis
+
+Applications of Tokenization
+
+
+Chatbots
+
+
+Search Engines
+
+
+Sentiment Analysis
+
+
+Machine Translation
+
+
+Text Summarization
+
+
+Spam Detection
+
+
+
+Advantages of Tokenization
+
+
+Simplifies text processing
+
+
+Improves NLP accuracy
+
+
+Easy text analysis
+
+
+Foundation for advanced NLP tasks
+
+
+
+Conclusion
+In this experiment, text tokenization was successfully performed using NLTK. Both word tokenization and sentence tokenization were implemented and analyzed.
+
+Learning Outcome
+After performing this experiment, students will be able to:
+
+
+Understand the concept of tokenization in NLP.
+
+
+Perform word tokenization using NLTK.
+
+
+Perform sentence tokenization using NLTK.
+
+
+Analyze text by converting it into tokens.
+
+
+Use tokenization as a preprocessing step in NLP applications.
+
